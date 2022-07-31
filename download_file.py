@@ -2,7 +2,7 @@ import pandas as pd
 import json
 
 
-def create_file_excel(data, title='static/data_bcb.xlsx'):
+def create_file_excel(data, title='data_bcb.xlsx'):
     dados = []
     for item in data:
         dados.append(list(item))
@@ -19,5 +19,5 @@ def create_file_json(dictionary):
         
     for subitem in dados:
         subitem[0] = str(subitem[0]) 
-    with open("static/data_bcb.json", "w") as outfile: 
+    with open("data_bcb.json", "w") as outfile: 
         json.dump({'data':dados}, outfile) 
