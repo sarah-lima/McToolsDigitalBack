@@ -4,7 +4,8 @@ from datetime import datetime
 import download_file
 
 def create_data():
-    cursor = db.connection_db()
+    connection = db.connection_db()
+    cursor = connection.cursor()
     data = get()
     format_data = data.get("data")
     insert_value = ''
@@ -21,7 +22,8 @@ def create_data():
     
     
 def get_data(init_data='', terminal_data='', file_type=''):
-    cursor = db.connection_db()
+    connection = db.connection_db()
+    cursor = connection.cursor()
     if init_data!=None and terminal_data!=None:
         init_data = datetime.strptime(init_data, "%d/%m/%Y")
         terminal_data = datetime.strptime(terminal_data, "%d/%m/%Y")

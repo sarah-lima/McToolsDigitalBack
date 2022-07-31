@@ -16,7 +16,7 @@ def connection_db():
             cursor.execute("select database();")
             record = cursor.fetchone()
             print("You're connected to database: ", record)
-            return cursor
+            return connection
     except Error as e:
         print("Error while connecting to MySQL", e)
     
