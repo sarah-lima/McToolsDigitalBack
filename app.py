@@ -23,7 +23,7 @@ def get_data_interval():
     args = req.args
     print(args)
     controller.bcb_data.get_data(args.get("init_data"), args.get("terminal_data"), args.get("file_type"))
-    return redirect(url_for('./', filename='data_bcb.json' if args.get("file_type")=='JSON' else 'data_bcb.xlsx'))
+    return redirect(url_for('static', filename='data_bcb.json' if args.get("file_type")=='JSON' else 'data_bcb.xlsx'))
 
 
 if __name__ == '__main__':
