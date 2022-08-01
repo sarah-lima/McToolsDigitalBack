@@ -21,7 +21,7 @@ def create_data():
         db.close_connection()
         return 'Success'
     else:
-        return create_data()
+        return 'Erro de conexão'
     
 def get_data(init_data='', terminal_data='', file_type=''):
     connection = db.connection_db()
@@ -77,5 +77,6 @@ def get(init_data='', terminal_data=''):
             cursor.execute("SELECT SUM(valor) FROM bcb")
             sum = cursor.fetchone()
         return dict(data=myresult, sum=sum[0])    
-    else: return get(init_data, terminal_data)
+    else: 
+        return 'Erro de conexão'
    
