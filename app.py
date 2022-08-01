@@ -28,7 +28,7 @@ def get_data_interval():
 @app.route('/filter', methods=["GET"])
 def get_data_filter():
     args = req.args
-    return controller.bcb_data.get_data(args.get("init_data"), args.get("terminal_data"))
+    return controller.bcb_data.get(args.get("init_data"), args.get("terminal_data"))
     
 
 if __name__ == '__main__':
