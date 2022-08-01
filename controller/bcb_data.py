@@ -1,5 +1,5 @@
 import database.db as db
-from request_data import get
+from request_data import get_request
 from datetime import datetime
 import download_file
 
@@ -7,8 +7,8 @@ def create_data():
     connection = db.connection_db()
     if connection!= None:      
         cursor = connection.cursor()
-        data = get()
-        format_data = data.get("data")
+        data = get_request()
+        format_data = data.get_request("data")
         insert_value = ''
         for i, value in enumerate(format_data):
             datas = (datetime.strptime(value.get('data'), "%d/%m/%Y"))

@@ -1,7 +1,7 @@
 from crypt import methods
 from flask import Flask, redirect, url_for, request as req
 from flask_cors import CORS
-from request_data import get
+from request_data import get_request
 import controller.bcb_data
 # controller.bcb_data.get_data(init_data='10/09/2000', terminal_data='10/09/2001', file_type='JSON')
 
@@ -10,7 +10,7 @@ CORS(app)
 
 @app.route("/")
 def get_data():
-    return get()
+    return get_request()
 
 
 @app.route("/create", methods=["POST"])
