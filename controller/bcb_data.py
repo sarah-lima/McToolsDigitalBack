@@ -38,7 +38,7 @@ def close_connection():
 
 def create_data():
     connection = connection_db()
-    if connection.is_connected():      
+    if connection!= None:      
         cursor = connection.cursor()
         data = get()
         format_data = data.get("data")
@@ -58,7 +58,7 @@ def create_data():
     
 def get_data(init_data='', terminal_data='', file_type=''):
     connection = connection_db()
-    if connection.is_connected():
+    if connection!= None:
         
         cursor = connection.cursor()
         if init_data!=None and terminal_data!=None:
