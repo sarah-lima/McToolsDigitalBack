@@ -25,6 +25,11 @@ def get_data_interval():
     controller.bcb_data.get_data(args.get("init_data"), args.get("terminal_data"), args.get("file_type"))
     return redirect(url_for('static', filename='data_bcb.json' if args.get("file_type")=='JSON' else 'data_bcb.xlsx'))
 
+@app.route('/filter', methods=["GET"])
+def get_data_filter():
+    args = req.args
+    return controller.bcb_data.get_data(args.get("init_data"), args.get("terminal_data"))
+    
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
