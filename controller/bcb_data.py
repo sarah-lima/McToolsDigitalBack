@@ -8,7 +8,7 @@ def create_data():
     if connection!= None:      
         cursor = connection.cursor()
         data = get_request()
-        format_data = data.get_request("data")
+        format_data = data.get("data")
         insert_value = ''
         for i, value in enumerate(format_data):
             datas = (datetime.strptime(value.get('data'), "%d/%m/%Y"))
