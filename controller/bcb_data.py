@@ -77,5 +77,5 @@ def get(init_data='', terminal_data=''):
             cursor.execute("SELECT SUM(valor) FROM bcb")
             sum = cursor.fetchone()
         return dict(data=myresult, sum=sum[0])    
-    else: return 'Erro de conexão'
+    else: return get(init_data, terminal_data)
    
