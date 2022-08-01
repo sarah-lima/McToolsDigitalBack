@@ -21,7 +21,7 @@ def create_data():
         db.close_connection()
         return 'Success'
     else:
-        return 'Erro de conexão'
+        return create_data()
     
 def get_data(init_data='', terminal_data='', file_type=''):
     connection = db.connection_db()
